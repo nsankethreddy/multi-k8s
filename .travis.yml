@@ -15,3 +15,9 @@ before_install:
 
 script:
   - docker run -e CI=true skete/react-test npm run test
+
+deploy:
+  provider: script
+  script: bash ./depoly.sh
+  on:
+    branch: master
